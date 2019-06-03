@@ -1,0 +1,80 @@
+<script type="text/javascript" src="https://unpkg.com/vue"></script>
+<link rel="stylesheet" href="stely.css">
+<body>
+<div class="div-1">
+<div id="app">
+    <div>
+    
+         <h1 id="titl"> Game "X", "O" Programming: Khaled Abu Nada</h1>
+
+    </div>
+
+    <div>
+       <h3> Turn: Player: ======= {{turn}} =======  </h3>
+    </div>
+<table border="1">
+    <tr v-for="row in board">
+        <td v-for="cell in row"  @click="setVal(cell)">
+            {{cell.value}}
+        </td>
+    </tr>
+</table>
+</div>
+</div>
+
+<script type="text/javascript">
+  var App = new Vue({
+    'el':'#app',
+    data:{
+         turn: 'X', 
+         
+
+        board: [
+            [ {value:''}, {value:''}, {value:''}],
+            [ {value:''}, {value:''}, {value:''}],
+            [ {value:''}, {value:''}, {value:''}],
+
+        ],
+        chances:[
+            [[0,0], [0,1], [0,2]],
+            [[1,0], [1,1], [1,2]],
+            [[2,0], [2,1], [2,2]],
+            [[0,0], [1,0], [2,0]],
+            [[0,1], [1,1], [2,1]],
+            [[0,2], [1,2], [2,2]],
+            [[0,0], [1,1], [2,2]],
+            [[0,2], [1,1], [2,0]]
+        ],
+    },
+
+    methods:{
+        setVal: function(cell){
+            if(cell.value){
+                alert('the cell is not empty');
+                return;
+
+            } 
+             
+            cell.value = this.turn;
+            this.checkWinner();
+            this.turn = (this.turn == 'X') ? 'O' : 'X';
+        },
+        checkWinner: function(){
+            this.chances.forEach(function(chance, index){
+                var check = chance.every(function(item){
+                   return App.board[ item[0]][ item[1] ] .value == App.turn ;
+                                                                                    
+                });        
+               
+                if(check){
+                    alert(App.turn +  ' Congratulations on winning:  Wins! by:Khaled_Nada')
+                }
+            });
+
+        }
+    }
+
+});
+
+</script>
+</body>

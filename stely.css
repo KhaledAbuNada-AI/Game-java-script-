@@ -1,0 +1,45 @@
+body{
+    margin: 10px auto;
+    width: 70%;
+    clear: both;
+    background-color: #293033;
+    
+}
+.div-1{
+    background-color: #14664A;
+   
+    margin: 20px  auto;
+    padding: 100px;
+    clear: both;
+}
+#titl{
+    font-size: 25px;
+    background-color: #14664A;
+    color: whitesmoke;
+    text-align: center;
+}
+table{
+    margin: 30px auto;
+    clear: both;
+    text-align: center;
+  
+}
+td{
+    width: 60px;
+    height: 60;
+    text-align: center;
+    border: 2px solid ;
+    color: #E6F2EE;
+
+}
+tr{
+    color: cyan;
+}
+h3{
+    margin: 28px auto;
+    clear: both;
+    text-align: center;
+   top: 10px;
+   color:whitesmoke; 
+   background-color: #14664A;
+}
